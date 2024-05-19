@@ -3,12 +3,19 @@ body {
   background-color: #3591a6;
 }
 
+div.container6 {
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.container6 p {
+  margin: 0;
+}
 h1 {
   text-align: center;
 }
 p {
-  text-align: center;
-}
-div {
   text-align: center;
 }
