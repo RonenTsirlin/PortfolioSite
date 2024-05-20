@@ -1,21 +1,70 @@
 body {
+  margin: 0;
   font-family: "Courier New", Courier, monospace;
-  background-color: #3591a6;
+  background-color: #0e192d;
+}
+.top-nav {
+  margin: 15px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
 }
 
-div.container6 {
-  height: 10em;
+.top-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; /* Aligns items to the right */
+}
+
+.top-nav li {
+  margin: 0;
+}
+
+.top-nav a {
+  display: block;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #1ae8bf;
+}
+
+.top-nav a:hover {
+  background-color: rgba(0, 0, 0, 0.4); /* Adds a hover effect */
+  border-radius: 10px; /* Rounded border */
+}
+
+.resume a {
+  border: 2px solid #1ae8bf;
+  border-radius: 10px; /* Rounded border */
+  padding: 10px 20px; /* Padding inside the button */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.resume a:hover {
+  background-color: #1ae8bf; /* Hover background color */
+  color: #000;
+  font-weight: bold; /* Make the text bold */
+}
+
+#containerIntro h1,
+#containerIntro p {
+  display: inline;
+  vertical-align: top;
+  line-height: 28px;
+  margin-top: 120px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-div.container6 p {
-  margin: 0;
-}
 h1 {
   text-align: center;
+  color: #fff;
 }
 p {
   text-align: center;
+  color: #fff;
 }
