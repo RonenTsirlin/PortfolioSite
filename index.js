@@ -1,10 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Enable CORS for all origins
+app.use(cors());
+
+// Enable CORS for specific origin
+app.use(cors({origin: 'https://ronentsirlin.github.io/PortfolioSite/'}));
 
 app.use(bodyParser.json());
 
