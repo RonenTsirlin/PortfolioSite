@@ -14,20 +14,16 @@ document.getElementById('contactForm').addEventListener('submit', async function
             body: JSON.stringify({ name, email, message }),
         });
 
-        // Log the entire response for debugging
-        console.log('Response:', response);
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Failed to send email');
+        }
 
         const data = await response.json();
-
-        // Log the parsed data for debugging
         console.log('Response data:', data);
 
-        if (response.ok) {
-            alert('Email sent successfully');
-            document.getElementById('contactForm').reset();
-        } else {
-            throw new Error(data.message || 'Failed to send email');
-        }
+        alert('Email sent successfully');
+        document.getElementById('contactForm').reset();
     } catch (error) {
         console.error('Error:', error);
         alert('Error: ' + error.message);

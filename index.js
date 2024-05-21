@@ -7,9 +7,12 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Use CORS with specific origin
+// Use CORS with specific origin and allow credentials
 app.use(cors({
-    origin: 'https://ronentsirlin.github.io/PortfolioSite/' // Update with your frontend's URL
+    origin: 'https://ronentsirlin.github.io',
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type'],
+    credentials: true
 }));
 
 app.use(bodyParser.json());
