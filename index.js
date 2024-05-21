@@ -7,11 +7,12 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-app.use(bodyParser.json());
+// Use CORS with specific origin
+app.use(cors({
+    origin: 'https://ronentsirlin.github.io/PortfolioSite/' // Update with your frontend's URL
+}));
 
-// Enable CORS for specific origin
-app.use(cors({origin: 'https://ronentsirlin.github.io/PortfolioSite/'}));
+app.use(bodyParser.json());
 
 app.post('/send', async (req, res) => {
     const { name, email, message } = req.body;
