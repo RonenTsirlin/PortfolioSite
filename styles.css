@@ -27,11 +27,11 @@ body {
   display: block;
   padding: 14px 20px;
   text-decoration: none;
-  color: #1ae8bf;
+  color: #fff;
 }
 
 .top-nav a:hover {
-  background-color: rgba(0, 0, 0, 0.4); /* Adds a hover effect */
+  color: #1ae8bf;
   border-radius: 10px; /* Rounded border */
 }
 
