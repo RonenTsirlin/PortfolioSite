@@ -15,16 +15,10 @@ document.getElementById('contactForm').addEventListener('submit', async function
         });
 
         if (response.ok) {
-            const data = await response.json();
-            if (data.success) {
-                alert('Email sent successfully');
-                document.getElementById('contactForm').reset();
-            } else {
-                alert('Failed to send email: ' + data.message);
-            }
+            alert('Email sent successfully');
+            document.getElementById('contactForm').reset();
         } else {
-            const errorData = await response.json();
-            alert('Failed to send email: ' + (errorData.message || 'Unknown error'));
+            throw new Error('Failed to send email');
         }
     } catch (error) {
         console.error('Error:', error);
