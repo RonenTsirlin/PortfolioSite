@@ -8,11 +8,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
+app.use(bodyParser.json());
 
 // Enable CORS for specific origin
 app.use(cors({origin: 'https://ronentsirlin.github.io/PortfolioSite/'}));
-
-app.use(bodyParser.json());
 
 app.post('/send', async (req, res) => {
     const { name, email, message } = req.body;
