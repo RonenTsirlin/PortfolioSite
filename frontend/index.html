@@ -15,12 +15,23 @@
         <li class="resume"><a href="#resume">Resume</a></li>
       </ul>
     </nav>
-    <div id="containerIntro">
-      <h1>Hello World!</h1>
-      <p>
-        This will be my portfolio page. <br />I will add some content here
-        later.
-      </p>
+    <div class="content">
+      <div class="header">
+        <h1>Hi my name is Ronen!</h1>
+        <p>
+          This will be my portfolio site and I will be adding more content soon. </br>  Feel free to contact me using this form!
+        </p>
+      </div>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
