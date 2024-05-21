@@ -1,11 +1,4 @@
-# Virtual environment
-venv/
-
-# Compiled Python files
-*.pyc
-__pycache__/
-
-# Environment variables
+node_modules/
 .env
 
 .DS_Store
