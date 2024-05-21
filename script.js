@@ -15,11 +15,19 @@ document.getElementById('contactForm').addEventListener('submit', async function
         });
 
         if (response.ok) {
-            alert('Email sent successfully');
+            const data = await response.json();
+            if (data.success) {
+                alert('Email sent successfully');
+                document.getElementById('contactForm').reset();
+            } else {
+                alert('Failed to send email: ' + data.message);
+            }
         } else {
-            alert('Failed to send email');
+            const errorData = await response.json();
+            alert('Failed to send email: ' + (errorData.message || 'Unknown error'));
         }
     } catch (error) {
+        console.error('Error:', error);
         alert('Error: ' + error.message);
     }
 });

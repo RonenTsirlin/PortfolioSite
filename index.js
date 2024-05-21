@@ -7,7 +7,6 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Enable CORS for all origins
 app.use(cors());
 
 // Enable CORS for specific origin
@@ -24,13 +23,15 @@ app.post('/send', async (req, res) => {
             email,
             message
         });
+
         if (response.status === 200) {
-            res.status(200).send({ success: true, message: 'Email sent successfully' });
+            res.status(200).json({ success: true, message: 'Email sent successfully' });
         } else {
-            res.status(response.status).send({ success: false, message: response.data.message });
+            res.status(response.status).json({ success: false, message: response.data.message });
         }
     } catch (error) {
-        res.status(500).send({ success: false, message: 'Server error' });
+        console.error(error); // Log the error to diagnose the issue
+        res.status(500).json({ success: false, message: 'Server error' });
     }
 });
 
